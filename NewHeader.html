@@ -1,0 +1,256 @@
+<style>
+    :root {
+        --lg-red: #a50034;
+        --text-dark: #000;
+        --bg-grey: #f0ece4;
+        --hover-bg: #e4e0d6;
+    }
+    /* p{
+        font-size: 16px;
+        font-weight: 400;
+        padding: 20px 0;
+        margin-left: 30px;
+    } */
+    .navbar {
+        display: flex;
+        align-items: center;
+        background-color: var(--bg-grey);
+        padding: 0 20px;
+        height: 70px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        height: 45px;
+        margin-right: 30px;
+    }
+
+    .nav-toggle {
+        display: none;
+        flex-direction: column;
+        margin-left: auto;
+        background: none;
+        border: none;
+    }
+
+    .nav-toggle span {
+        height: 3px;
+        width: 25px;
+        background: var(--text-dark);
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li {
+        position: static;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 400;
+        padding: 20px 0;
+        display: inline-block;
+        border-top: 3px solid transparent;
+        transition: border-color 0.2s, color 0.2s;
+    }
+
+    .top-links{
+        border-top: none;
+    }
+    .top-links:hover {
+        /* border-top: 3px solid var(--lg-red); */
+        color: var(--lg-red);
+    }
+    
+
+    .dropdown {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        /* transform: translateY(-15px); */
+        transition: max-height 0.2s ease, opacity 0.1s ease;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--bg-grey);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        min-width: 220px;
+        z-index: 999;
+        pointer-events: none;
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .dropdown p{
+        font-size: 16px;
+        font-weight: 400;
+        padding: 12px 20px;
+        /* margin-left: 30px; */
+    }
+    .dropdown a {
+        /* margin-left: 30px; */
+        display: inline-block;
+        padding: 12px 20px;
+        color: var(--text-dark);
+        white-space: nowrap;
+        font-weight: normal;
+        /* cursor: pointer; */
+
+    }
+
+    .dropdown a:hover {
+        color: var(--text-dark);
+        text-decoration: underline;
+    }
+    .nav-links li:hover{
+        border-top: 3px solid var(--lg-red);
+    }
+    .nav-links li:hover .dropdown {
+        max-height: 350px;
+        opacity: 1;
+        visibility: visible;
+        /* transform: translateY(0); */
+        pointer-events: all;
+        /* display: block; */
+        position: absolute;
+        top: 100%;
+        width: 100vw;
+        height: 150vw;
+        background-color: var(--bg-grey);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;;
+        /* gap: 30px; */
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+        .nav-toggle {
+            display: flex;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            background-color: var(--bg-grey);
+            width: 100%;
+            flex-direction: column;
+            gap: 0;
+            display: none;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links li {
+            width: 100%;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown {
+            position: static;
+            box-shadow: none;
+        }
+
+        .dropdown a {
+            padding-left: 30px;
+        }
+
+        .nav-links a {
+            padding: 15px 20px;
+            border: none;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--hover-bg);
+            color: var(--lg-red);
+            border: none;
+        }
+    }
+</style>
+
+<nav class="navbar">
+    <a href="https://lge.mn/">
+        <img src="https://raw.githubusercontent.com/timfesc/images/refs/heads/main/logo-lg-100-44.svg" alt="LG Logo"
+            class="logo" /></a>
+
+    <div class="nav-container">
+        <ul class="nav-links">
+            <li>
+                <a href="https://lge.mn/lg-brand" class="top-links">LG брэнд</a>
+                <div class="dropdown">
+                    <p><strong>LG брэнд</strong></p>
+                    <a href="https://lge.mn/lg-magazine/">LG Magazine</a>
+                </div>
+            </li>
+            <li><a href="https://lge.mn/service" class="top-links">Үйлчилгээ</a></li>
+            <li><a href="https://lge.mn/wtb" class="top-links">Хаанаас худалдаж авах вэ?</a></li>
+
+            <li>
+                <a href="https://lge.mn/tvaudio/" class="top-links">Телевизор ба Аудио</a>
+                <div class="dropdown">
+                    <p><strong>Телевизор ба Аудио</strong></p>
+                    <a href="https://lge.mn/tv-oled/">OLED</a>
+                    <a href="https://lge.mn/tv-qned/">QNED</a>
+                    <a href="https://lge.mn/tv-nanocell/">Nanocell</a>
+                    <a href="https://lge.mn/tv-uhd/">UHD</a>
+                    <a href="https://lge.mn/tv-audio/">Аудио</a>
+                </div>
+            </li>
+
+            <li>
+                <a href="https://lge.mn/kitchen-Solutions/" class="top-links">Гал тогооны бүтээгдэхүүн
+                </a>
+                <div class="dropdown">
+                    <p><strong>Гал тогооны бүтээгдэхүүн</strong></p>
+                    <a href="https://lge.mn/refrigerators/">Хөргөгч</a>
+                    <a href="https://lge.mn/microwaves">Богино долгионы зуух </a>
+                    <a href="https://lge.mn/built-in">Суурилуулах зориулалттай бүтээгдэхүүнүүд
+                    </a>
+                </div>
+            </li>
+
+            <li>
+                <a href="https://lge.mn/living-solutions/" class="top-links">Гэр ахуйн бүтээгдэхүүн </a>
+                <div class="dropdown">
+                    <p><strong>Гэр ахуйн бүтээгдэхүүн</strong></p>
+                    <a href="https://lge.mn/wm/">Угаалгын машин </a>
+                    <a href="https://lge.mn/vacuum-cleaners">Тоос сорогч</a>
+                    <a href="https://lge.mn/styler">Styler</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation"
+        onclick="document.querySelector('.nav-links').classList.toggle('active')">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
