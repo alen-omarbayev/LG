@@ -1,0 +1,81 @@
+{
+  "articles": [
+    {
+      "category": "Бүтээгдэхүүн",
+      "image": "https://raw.githubusercontent.com/timfesc/mng-pr-images/main/1/PREVIEW_LG_Smart_Purchases.png",
+      "title": "Ухаалаг худалдан авалт таны гэрийг илүү тав тухтай болгоно",
+      "date": "11.12.2025",
+      "link": "https://lge.mn/smart-purchases-for-your-home/"
+    },
+    {
+      "category": "Бүтээгдэхүүн",
+      "image": "https://raw.githubusercontent.com/timfesc/mng-pr-images/main/2/1_LG_Ref_GC-B401FEPM%5B100%5D.png",
+      "title": "Яагаад хөргөлтийн тасалгаа хэрэгтэй вэ?",
+      "date": "11.12.2025",
+      "link": "https://lge.mn/why-you-need-a-fridge/"
+    },
+    {
+      "category": "Бүтээгдэхүүн",
+      "image": "https://raw.githubusercontent.com/timfesc/mng-pr-images/main/3/PREVIEW_LG_HS_GC-B509SECL%5B35%5D.png",
+      "title": "Хөргөгчинд хадгалах ёстой боловч бидний анзаардаггүй зүйлс",
+      "date": "11.12.2025",
+      "link": "https://lge.mn/what-stores-in-the-refrigerators/"
+    },
+    {
+      "category": "Компани",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aaa-december/2.png",
+      "title": "LG 2026 ОНЫ БҮТЦИЙН ӨӨРЧЛӨЛТӨӨ ЗАРЛАЛАА",
+      "date": "28.11.2025",
+      "link": "https://lge.mn/lg_announces-organizational-changes-for-2026/"
+    },
+    {
+      "category": "Бүтээгдэхүүн",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-september/33/PREVIEW_LG_OLED_New.png",
+      "title": "Төгс гэрийн театр: LG OLED зурагтаар тухтай кино орчинг бүрдүүлэх санаанууд",
+      "date": "19.11.2025",
+      "link": "https://lge.mn/lg_oled/"
+    },
+    {
+      "category": "Бүтээгдэхүүн",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-september/33/PREVIEW_LG_Ref_GC-B509FEPW.png",
+      "title": "Хөргөгчинд юу хадгалах ёсгүй вэ?",
+      "date": "19.11.2025",
+      "link": "https://lge.mn/doorcooling/"
+    },
+    {
+      "category": "Бүтээгдэхүүн",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-september/33/PREVIEW_LG_AI_DD.png",
+      "title": "AI DD™ технологи гэж юу вэ?",
+      "date": "19.11.2025",
+      "link": "https://lge.mn/ai_dd/"
+    },
+    {
+      "category": "Компани",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-september/31/1.jpeg",
+      "title": "Өдөр бүрийн амьдралд аз жаргалыг мэдэрье зорилготой “Life’s Good” подкастыг LG Bestshop Mongolia эхлүүллээ",
+      "date": "13.11.2025",
+      "link": "https://lge.mn/podcast/"
+    },
+    {
+      "category": "Технологи",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-september/31/Image-CES-awards.jpg",
+      "title": "LG “CES 2026 Innovation Awards”-ын шагналуудын эзэн боллоо",
+      "date": "13.11.2025",
+      "link": "https://lge.mn/innovation%20awards/"
+    },
+    {
+      "category": "Бүтээгдэхүүн",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-september/24/1_LG_WashTower.png",
+      "title": "LG WashTower™-ийг ямар ч интерьерт хэрхэн зохицуулан байрлуулах вэ?",
+      "date": "17.10.2025",
+      "link": "https://lge.mn/lg-how-to-integrate-washtower/"
+    },
+    {
+      "category": "Компани",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-september/mng-article/9.jpg",
+      "title": "LG КОМПАНИ МОНГОЛД \"LIFE'S GOOD\" ЦЭЦЭРЛЭГ НЭЭЖ, ДЭЛХИЙН БАЙГАЛЬ ОРЧНЫ ӨДРИЙГ ТЭМДЭГЛЭЛЭЭ",
+      "date": "25.09.2025",
+      "link": "https://lge.mn/lg-company-life-is-good/"
+    }
+  ]
+}
