@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // TV
   const tvTypes = ["OLED", "QNED", "NanoCell", "UHD", "FHD-UHD", "Audio"];
   const tvCounts = [10, 16, 5, 36, 1, 7];
-  // tv
+
   new Chart(document.getElementById("tvChart"), {
     type: "bar",
     data: {
@@ -19,13 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
             "#8b5cf6",
           ],
           borderRadius: 10,
+          maxBarThickness: 60,
         },
       ],
     },
-    options: chartOptions(),
+    options: commonOptions(),
   });
 
-  // fridge
+  // Refrigerators
   const fridgeTypes = [
     "Instaview",
     "Side by Side",
@@ -33,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "Bottom Freezer",
     "Objet Collection",
   ];
-
   const fridgeCounts = [4, 14, 6, 24, 4];
 
   new Chart(document.getElementById("fridgeChart"), {
@@ -52,16 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
             "#a78bfa",
           ],
           borderRadius: 10,
+          maxBarThickness: 60,
         },
       ],
     },
-    options: chartOptions(),
+    options: commonOptions(),
   });
 
-  // microwaves
-  const microwaveTypes = ["Microwaves"];
-
-  const microwaveCounts = [11];
+  // Microwaves
+  const microwaveTypes = ["Microwaves", "", ""];
+  const microwaveCounts = [11, 0, 0];
 
   new Chart(document.getElementById("microwaveChart"), {
     type: "bar",
@@ -71,24 +72,18 @@ document.addEventListener("DOMContentLoaded", () => {
         {
           label: "Number of Microwaves",
           data: microwaveCounts,
-          backgroundColor: [
-            "#5838f8ff",
-            "#d34e34ff",
-            "#fb24baff",
-            "#717afbff",
-            "#8bfabdff",
-          ],
+          backgroundColor: ["#5838f8", "transparent", "transparent"],
           borderRadius: 10,
+          maxBarThickness: 60,
         },
       ],
     },
-    options: chartOptions(),
+    options: commonOptions(),
   });
 
-  // bult in
-  const builtInTypes = ["Built-in"];
-
-  const builtInCounts = [17];
+  // Built-in
+  const builtInTypes = ["Built-in", "", ""];
+  const builtInCounts = [17, 0, 0];
 
   new Chart(document.getElementById("builtInChart"), {
     type: "bar",
@@ -96,23 +91,18 @@ document.addEventListener("DOMContentLoaded", () => {
       labels: builtInTypes,
       datasets: [
         {
-          label: "Number of built in",
+          label: "Number of Built-in",
           data: builtInCounts,
-          backgroundColor: [
-            "#f83838ff",
-            "#71d334ff",
-            "#2432fbff",
-            "#7afb71ff",
-            "#f1fa8bff",
-          ],
+          backgroundColor: ["#f83838", "transparent", "transparent"],
           borderRadius: 10,
+          maxBarThickness: 60,
         },
       ],
     },
-    options: chartOptions(),
+    options: commonOptions(),
   });
 
-  // washing machines
+  // Washing Machines
   const wmTypes = [
     "wm-washtower",
     "wm-washing-machines",
@@ -120,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "wm-dryers",
     "styler",
   ];
-
   const wmCounts = [3, 36, 3, 3, 2];
 
   new Chart(document.getElementById("wmChart"), {
@@ -129,26 +118,26 @@ document.addEventListener("DOMContentLoaded", () => {
       labels: wmTypes,
       datasets: [
         {
-          label: "Number of washing machines",
+          label: "Number of Washing Machines",
           data: wmCounts,
           backgroundColor: [
-            "#d8f838ff",
-            "#3479d3ff",
-            "#fb2424ff",
-            "#f471fbff",
-            "#8bf1faff",
+            "#d8f838",
+            "#3479d3",
+            "#fb2424",
+            "#f471fb",
+            "#8bf1fa",
           ],
           borderRadius: 10,
+          maxBarThickness: 60,
         },
       ],
     },
-    options: chartOptions(),
+    options: commonOptions(),
   });
 
-  // vacuum cleaners
-  const vccTypes = ["vacuum cleaner"];
-
-  const vccCounts = [15];
+  // Vacuum cleaners
+  const vccTypes = ["Vacuum Cleaner", "", ""];
+  const vccCounts = [15, 0, 0];
 
   new Chart(document.getElementById("vccChart"), {
     type: "bar",
@@ -156,23 +145,19 @@ document.addEventListener("DOMContentLoaded", () => {
       labels: vccTypes,
       datasets: [
         {
-          label: "Number of built washing machines",
+          label: "Number of Vacuum Cleaners",
           data: vccCounts,
-          backgroundColor: [
-            "#7b38f8ff",
-            "#3479d3ff",
-            "#fb2424ff",
-            "#f471fbff",
-            "#8bf1faff",
-          ],
+          backgroundColor: ["#7b38f8", "transparent", "transparent"],
           borderRadius: 10,
+          maxBarThickness: 60,
         },
       ],
     },
-    options: chartOptions(),
+    options: commonOptions(),
   });
 
-  function chartOptions() {
+  // COMMON OPTIONS
+  function commonOptions() {
     return {
       responsive: true,
       maintainAspectRatio: false,
@@ -191,10 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         y: {
           beginAtZero: true,
-          ticks: {
-            color: "#cbd5f5",
-            stepSize: 5,
-          },
+          ticks: { color: "#cbd5f5", stepSize: 5 },
           grid: { color: "#334155" },
         },
       },
