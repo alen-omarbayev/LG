@@ -175,8 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
     options: commonOptions(),
   });
 
-  // Conditioneer cleaners
-  const tjconditioneerTypes = ["Vacuum Cleaner", "", ""];
+  // Conditioneer
+  const tjconditioneerTypes = ["Conditioneer", "", ""];
   const tjconditioneerCounts = [7, 0, 0];
 
   new Chart(document.getElementById("tjconditioneerChart"), {
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
       labels: tjconditioneerTypes,
       datasets: [
         {
-          label: "Number of Vacuum Cleaners",
+          label: "Number of Conditioneer",
           data: tjconditioneerCounts,
           backgroundColor: ["#7b38f8", "transparent", "transparent"],
           borderRadius: 10,
