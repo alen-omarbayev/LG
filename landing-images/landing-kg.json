@@ -1,34 +1,27 @@
 [
   {
-    "category": "Washtower",
     "model": "W4W8LVPK2HM",
     "title": "Кир жуугуч + кургатуу LG WashTower, AI DD™ 13/10 кг",
     "description": "Бирдиктүү корпус\nБорбордук башкаруу\nAI DD™ / Smart Pairing™\nTurboWash™ 360 / Dry Ready\nКош инвертор жылуулук насосу Dual Inverter HeatPump™",
-    "link": "",
     "images": ["https://raw.githubusercontent.com/alen-omarbayev/LG/main/landing-images/kg/W4W8LVPK2HM/1.png", "https://raw.githubusercontent.com/alen-omarbayev/LG/main/landing-images/kg/W4W8LVPK2HM/2.png", "https://raw.githubusercontent.com/alen-omarbayev/LG/main/landing-images/kg/W4W8LVPK2HM/3.png"]
   },
   {
-    "category": "Washtower",
     "model": "W4W8LVPKZHM",
     "title": "Кир жуугуч + кургатуу LG WashTower, AI DD™ 13/10 кг",
     "description": "Бирдиктүү корпус\nБорбордук башкаруу\nAI DD™ / Smart Pairing™\nTurboWash™ 360 / Dry Ready\nКош инвертор жылуулук насосу Dual Inverter HeatPump™",
-    "link": "https://www.lg.com/kz/laundry/objet-collection-washtower/w4w8lvpkzhm/",
     "images": []
   },
   {
-    "category": "Washtower",
     "model": "W4W8LVPK4HM",
     "title": "Кир жуугуч + кургатуу LG WashTower, AI DD™ 13/10 кг",
     "description": "Бирдиктүү корпус\nБорбордук башкаруу\nAI DD™ / Smart Pairing™\nTurboWash™ 360 / Dry Ready\nКош инвертор жылуулук насосу Dual Inverter HeatPump™",
-    "link": "",
     "images": []
   },
   {
-    "category": "Washtower",
     "model": "W1S1CVKK2HM",
     "title": "Кир жуугуч менен кургаткыч, W1S1CVKK2HM WashTower, AI DD™ 18/16 кг",
     "description": "Бирдиктүү корпус\nБорбордук башкаруу\nAI DD™ / Smart Pairing™\nTurboWash™ 360 / Dry Ready\nКош инвертор жылуулук насосу Dual Inverter HeatPump™",
-    "link": "",
     "images": []
   }
 ]
+
