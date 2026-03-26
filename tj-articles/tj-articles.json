@@ -2,6 +2,20 @@
   "articles": [
     {
       "category": "",
+      "image": "https://raw.githubusercontent.com/alen-omarbayev/LG/main/tj-articles/25_12_KZ_RU_Top_5_TV_series_of_2025_for_cozy_evenings_at_home/PREVIEW_LG_TV_QNED%20evo_AI_QNED86_4K.png",
+      "title": "Топ-5 сериалов 2025 года для уютных домашних вечеров ",
+      "date": "25.12.2025",
+      "link": "https://lge.tj/lg-magazine/top_5_tv_series_of_2025_for_cozy_evenings_at_home/"
+    },
+    {
+      "category": "",
+      "image": "https://raw.githubusercontent.com/alen-omarbayev/LG/main/tj-articles/22_12_KZ_RU_Mistakes_when_choosing_a_TV_NEW%20/PREVIEW_LG_OLED%20evo%20AI%20-%20G%20model_TV.png",
+      "title": "Ошибки при выборе телевизора ",
+      "date": "22.12.2025",
+      "link": "https://lge.tj/lg-magazine/mistakes_when_choosing_a_tv/"
+    },
+    {
+      "category": "",
       "image": "https://raw.githubusercontent.com/alen-omarbayev/LG/main/tj-articles/19_12_KZ_RU_Family_traditions_before_New_Year_s_Eve/PREVIEW_LG_TV_MW_XBOOM.png",
       "title": "Семейные традиции перед Новым годом: идеи, которые наполнят дом теплом",
       "date": "19.12.2025",
@@ -20,6 +34,14 @@
       "title": "Зимние напитки с LG NeoChef: готовим какао, глинтвейн и имбирно-пряничный кофе ",
       "date": "1.12.2025",
       "link": "https://lge.tj/lg-magazine/Winter_drinks_with_LG_NeoChef/"
+    }, 
+    {
+      "category": "",
+      "image": "https://raw.githubusercontent.com/alen-omarbayev/LG/main/tj-articles/3_12_KZ_RU_How_to_create_a_home_theater_for_New_Year_s_Eve/PREVIEW_LG_Smart_TV_Soundbar.png",
+      "title": "Как создать домашний кинотеатр на Новый год с LG ",
+      "date": "03.12.2025",
+      "link": "https://lge.tj/lg-magazine/how_to_create_a_home_theater_for_new_year_s_eve/"
     }
+
   ]
 }
