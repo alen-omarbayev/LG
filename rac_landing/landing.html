@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,10 +12,16 @@
   <body>
     <div class="cc-container">
       <div class="banner">
-        <img
-          src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/HERO_BANNER_TJ.png"
-          alt="banner img"
-        />
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcset="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/HERO_BANNER_MOB_TJ.png"
+          />
+          <img
+            src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/HERO_BANNER_TJ.png"
+            alt="banner img"
+          />
+        </picture>
       </div>
       <div class="c-container">
         <div class="c-block">
@@ -28,11 +34,17 @@
               ба эҳтиёҷоти шумо амал мекунад.
             </p>
           </div>
-          <img
-            class="huge-img"
-            src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/desktop_01.png"
-            alt="banner img"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_01.png"
+            />
+            <img
+              class="huge-img"
+              src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/desktop_01.png"
+              alt="banner img"
+            />
+          </picture>
         </div>
 
         <div class="c-block">
@@ -49,13 +61,21 @@
               оптималӣ нигоҳ дошта шавад.
             </p>
           </div>
-          <img
-            class="huge-img"
-            src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/desktop_02.png"
-            alt="banner img"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_02.png"
+            />
+            <img
+              class="huge-img"
+              src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/desktop_02.png"
+              alt="banner img"
+            />
+          </picture>
         </div>
-        <div class="c-block">
+
+        <!-- Video block: text overlaid on top of video -->
+        <div class="c-block video-block">
           <video
             class="video-hero__video"
             id="heroVideo"
@@ -63,25 +83,31 @@
             muted
             loop
             playsinline
-            poster=""
           >
-            <div class="c-header">
-              <h3>Auto Cleaning</h3>
-              <h2>Функсияи тозакунии автоматии ҷузъҳои дохилӣ</h2>
-              <p>
-                Намиро аз дохили кондиционер ба таври худкор хориҷ мекунад, то
-                тозагӣ ва гигиенаи дастгоҳ нигоҳ дошта шавад
-              </p>
-            </div>
             <source
               id="heroVideoSource"
               src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/desktop_03.webm"
-              type="video/mp4"
+              type="video/webm"
+              media="(min-width: 769px)"
+            />
+            <source
+              src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_03.webm"
+              type="video/webm"
+              media="(max-width: 768px)"
             />
           </video>
+          <div class="c-header c-header--left">
+            <h3>Auto Cleaning</h3>
+            <h2>Функсияи тозакунии автоматии ҷузъҳои дохилӣ</h2>
+            <p>
+              Намиро аз дохили кондиционер ба таври худкор хориҷ мекунад, то
+              тозагӣ ва гигиенаи дастгоҳ нигоҳ дошта шавад
+            </p>
+          </div>
         </div>
 
         <div class="c-block fourth">
+          <img src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_04.png" alt="">
           <div class="c-header">
             <h3>Реҷаи хоб</h3>
             <h2>Реҷаи хоб бароҳатиро таъмин мекунад</h2>
@@ -90,6 +116,7 @@
               дарозмуддат баҳра баред.
             </p>
           </div>
+          
         </div>
 
         <div class="c-block fifth">
@@ -98,6 +125,7 @@
             <h2>Шабҳои ором бо нури хомӯш</h2>
             <p>Бе нури озори кондиционер аз хоби амиқ ва ором лаззат баред.</p>
           </div>
+          <img src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_05.png" alt="">
         </div>
 
         <div class="c-block sixth">
@@ -141,7 +169,7 @@
           <div id="product-list">
             <div class="loading">Загрузка продуктов...</div>
           </div>
-          <div id="pagination" class="pagination"></div>
+
         </div>
       </div>
     </div>
@@ -184,7 +212,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/HERO_BANNER_TJ.png");
+    
   }
 
   .banner img {
@@ -227,13 +255,42 @@
     height: auto;
   }
 
-  .fourth {
-    align-items: flex-end;
-    height: 450px;
+  /* VIDEO BLOCK FIXES */
+  .video-block {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+  }
+  .video-hero__video {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    display: block;
+  }
+  .video-block .c-header--left {
+    position: absolute;
+    top: 117px;
+    left: 40px;
     text-align: left;
-    background-image: url("https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/desktop_04.png");
-    background-position: left;
-    background-size: cover;
+    max-width: 500px;
+    z-index: 2;
+  }
+  .video-block .c-header--left p {
+    text-align: left;
+  }
+
+  .fourth {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  .fourth img{
+    
+    width: 50%;
+    height: auto;
   }
   .fourth .c-header {
     text-align: left;
@@ -244,12 +301,16 @@
   }
 
   .fifth {
+    display: flex;
+    flex-direction: row;
     align-items: flex-start;
-    height: 450px;
+    justify-content: space-between;
+    align-items: center;
     text-align: left;
-    background-image: url("https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/desktop_05.png");
-    background-position: left;
-    background-size: cover;
+  }
+  .fifth img{
+    width: 50%;
+    height: auto;
   }
   .fifth .c-header {
     text-align: left;
@@ -405,7 +466,7 @@
   @media (max-width: 480px) {
     #product-list {
       flex-wrap: nowrap;
-      flex-direction: column;
+flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 100%;
@@ -417,44 +478,19 @@
 </style>
 
 <script>
+  // Swap video source based on screen width (media attribute on <source> not reliable)
   const heroVideo = document.getElementById("heroVideo");
-  const videoToggleBtn = document.getElementById("videoToggleBtn");
-  const videoPauseIcon = document.getElementById("videoPauseIcon");
-  const videoPlayIcon = document.getElementById("videoPlayIcon");
-  let videoPlaying = true;
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const videoSrc = isMobile
+    ? "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/mob_03.webm"
+    : "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/desktop_03.webm";
+  document.getElementById("heroVideoSource").src = videoSrc;
+  heroVideo.load();
 
-  videoToggleBtn.addEventListener("click", () => {
-    videoPlaying = !videoPlaying;
-    if (videoPlaying) {
-      heroVideo.play();
-      videoPauseIcon.style.display = "";
-      videoPlayIcon.style.display = "none";
-    } else {
-      heroVideo.pause();
-      videoPauseIcon.style.display = "none";
-      videoPlayIcon.style.display = "";
-    }
-  });
-  heroVideo.addEventListener("play", () => {
-    videoPlaying = true;
-    videoPauseIcon.style.display = "";
-    videoPlayIcon.style.display = "none";
-  });
-  heroVideo.addEventListener("pause", () => {
-    videoPlaying = false;
-    videoPauseIcon.style.display = "none";
-    videoPlayIcon.style.display = "";
-  });
-</script>
-
-<script>
   console.log("Script started!");
 
   let products = [];
-  const itemsPerPage = 12;
-  let currentPage = 1;
 
-  // Add timeout to detect if fetch is hanging
   const fetchTimeout = setTimeout(() => {
     console.error("Fetch timeout - request taking too long");
     document.getElementById("product-list").innerHTML =
@@ -462,7 +498,7 @@
   }, 10000);
 
   fetch(
-    "https://raw.githubusercontent.com/timfesc/tj-products/refs/heads/main/wm-washtower.json",
+    "https://raw.githubusercontent.com/timfesc/tj-products/refs/heads/main/wm-washtower.json"
   )
     .then((res) => {
       clearTimeout(fetchTimeout);
@@ -476,25 +512,21 @@
       console.log("Products loaded:", data.length);
       products = data;
       renderProducts();
-      renderPagination();
     })
     .catch((error) => {
       clearTimeout(fetchTimeout);
       console.error("Error loading products:", error);
-      document.getElementById("product-list").innerHTML =
-        `<div class="error">Ошибка загрузки продуктов: ${error.message}<br>Пожалуйста, обновите страницу.</div>`;
+      document.getElementById(
+        "product-list"
+      ).innerHTML = `<div class="error">Ошибка загрузки продуктов: ${error.message}<br>Пожалуйста, обновите страницу.</div>`;
     });
 
   function renderProducts() {
-    console.log("Rendering products, page:", currentPage);
+    console.log("Rendering products...");
     const list = document.getElementById("product-list");
     list.innerHTML = "";
 
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const pageProducts = products.slice(start, end);
-
-    pageProducts.forEach((p, index) => {
+    products.forEach((p, index) => {
       const card = document.createElement("div");
       card.className = "product-card";
 
@@ -504,7 +536,12 @@
                 <div class="product-img-box">
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            ${p.images.map((img) => `<div class="swiper-slide"><img src="${img}" alt="${p.model}" loading="lazy" decoding="async"></div>`).join("")}</div>
+                            ${p.images
+                              .map(
+                                (img) =>
+                                  `<div class="swiper-slide"><img src="${img}" alt="${p.model}" loading="lazy" decoding="async"></div>`
+                              )
+                              .join("")}</div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
@@ -516,7 +553,6 @@
       list.appendChild(card);
     });
 
-    // Initialize Swiper for each product
     document.querySelectorAll(".swiper").forEach((swiperEl) => {
       new Swiper(swiperEl, {
         navigation: {
@@ -529,25 +565,6 @@
       });
     });
   }
-  function renderPagination() {
-    const pages = Math.ceil(products.length / itemsPerPage);
-    const container = document.getElementById("pagination");
-    container.innerHTML = "";
 
-    for (let i = 1; i <= pages; i++) {
-      const btn = document.createElement("button");
-      btn.textContent = i;
 
-      if (i === currentPage) btn.classList.add("active");
-
-      btn.onclick = () => {
-        currentPage = i;
-        renderProducts();
-        renderPagination();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      };
-
-      container.appendChild(btn);
-    }
-  }
 </script>
