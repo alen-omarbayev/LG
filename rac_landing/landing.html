@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,7 +15,9 @@
         <picture>
           <source
             media="(max-width: 768px)"
-            srcset="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/HERO_BANNER_MOB_TJ.png"
+            srcset="
+              https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/HERO_BANNER_MOB_TJ.png
+            "
           />
           <img
             src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/hero/HERO_BANNER_TJ.png"
@@ -37,7 +39,9 @@
           <picture>
             <source
               media="(max-width: 768px)"
-              srcset="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_01.png"
+              srcset="
+                https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_01.png
+              "
             />
             <img
               class="huge-img"
@@ -64,7 +68,9 @@
           <picture>
             <source
               media="(max-width: 768px)"
-              srcset="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_02.png"
+              srcset="
+                https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_02.png
+              "
             />
             <img
               class="huge-img"
@@ -107,7 +113,10 @@
         </div>
 
         <div class="c-block fourth">
-          <img src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_04.png" alt="">
+          <img
+            src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_04.png"
+            alt=""
+          />
           <div class="c-header">
             <h3>Реҷаи хоб</h3>
             <h2>Реҷаи хоб бароҳатиро таъмин мекунад</h2>
@@ -116,7 +125,6 @@
               дарозмуддат баҳра баред.
             </p>
           </div>
-          
         </div>
 
         <div class="c-block fifth">
@@ -125,7 +133,10 @@
             <h2>Шабҳои ором бо нури хомӯш</h2>
             <p>Бе нури озори кондиционер аз хоби амиқ ва ором лаззат баред.</p>
           </div>
-          <img src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_05.png" alt="">
+          <img
+            src="https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/tj/mob/mob_05.png"
+            alt=""
+          />
         </div>
 
         <div class="c-block sixth">
@@ -169,7 +180,6 @@
           <div id="product-list">
             <div class="loading">Загрузка продуктов...</div>
           </div>
-
         </div>
       </div>
     </div>
@@ -212,7 +222,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
   }
 
   .banner img {
@@ -287,8 +296,7 @@
     align-items: center;
     text-align: left;
   }
-  .fourth img{
-    
+  .fourth img {
     width: 50%;
     height: auto;
   }
@@ -308,7 +316,7 @@
     align-items: center;
     text-align: left;
   }
-  .fifth img{
+  .fifth img {
     width: 50%;
     height: auto;
   }
@@ -466,13 +474,32 @@
   @media (max-width: 480px) {
     #product-list {
       flex-wrap: nowrap;
-flex-direction: column;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 100%;
     }
     .product-card {
       width: 316px;
+    }
+  }
+  @media (max-width: 768px) {
+    .sixth {
+      flex-direction: column;
+      align-items: center;
+    }
+    .fourth,
+    .fifth {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .fifth {
+      flex-direction: column-reverse;
+    }
+    .fourth img,
+    .fifth img {
+      width: 100%;
     }
   }
 </style>
@@ -498,7 +525,7 @@ flex-direction: column;
   }, 10000);
 
   fetch(
-    "https://raw.githubusercontent.com/timfesc/tj-products/refs/heads/main/wm-washtower.json"
+    "https://raw.githubusercontent.com/timfesc/tj-products/refs/heads/main/wm-washtower.json",
   )
     .then((res) => {
       clearTimeout(fetchTimeout);
@@ -516,9 +543,8 @@ flex-direction: column;
     .catch((error) => {
       clearTimeout(fetchTimeout);
       console.error("Error loading products:", error);
-      document.getElementById(
-        "product-list"
-      ).innerHTML = `<div class="error">Ошибка загрузки продуктов: ${error.message}<br>Пожалуйста, обновите страницу.</div>`;
+      document.getElementById("product-list").innerHTML =
+        `<div class="error">Ошибка загрузки продуктов: ${error.message}<br>Пожалуйста, обновите страницу.</div>`;
     });
 
   function renderProducts() {
@@ -539,7 +565,7 @@ flex-direction: column;
                             ${p.images
                               .map(
                                 (img) =>
-                                  `<div class="swiper-slide"><img src="${img}" alt="${p.model}" loading="lazy" decoding="async"></div>`
+                                  `<div class="swiper-slide"><img src="${img}" alt="${p.model}" loading="lazy" decoding="async"></div>`,
                               )
                               .join("")}</div>
                         <div class="swiper-button-next"></div>
@@ -565,6 +591,4 @@ flex-direction: column;
       });
     });
   }
-
-
 </script>
