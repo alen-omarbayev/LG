@@ -1,0 +1,32 @@
+[
+  {
+    "model": "WZ12AWN",
+    "title": "Кондиционер LG Inverter Pro | 36 м² | Охлаждение, обогрев",
+    "images": [
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac1.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac2.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac3.png"
+    ],
+    "description": "• Быстрое охлаждение и обогрев<br>• Предварительное охлаждение или обогрев<br>• Двойное измерение температуры<br>• Auto Cleaning"
+  },
+  {
+    "model": "WZ18AWN",
+    "title": "Кондиционер LG Inverter Pro | 54 м² | Охлаждение, обогрев",
+    "images": [
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac1.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac2.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac3.png"
+    ],
+    "description": "• Быстрое охлаждение и обогрев<br>• Предварительное охлаждение или обогрев<br>• Двойное измерение температуры<br>• Auto Cleaning"
+  },
+  {
+    "model": "WZ24AWN",
+    "title": "Кондиционер LG Inverter Pro | 54 м² | Охлаждение, обогрев",
+    "images": [
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac1.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac2.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac3.png"
+    ],
+    "description": "• Быстрое охлаждение и обогрев<br>• Предварительное охлаждение или обогрев<br>• Двойное измерение температуры<br>• Auto Cleaning"
+  }
+]
