@@ -1,0 +1,32 @@
+[
+  {
+    "model": "WZ12AWN",
+    "title": "LG Inverter Pro агааржуулагч | 36 м² | Хөргөлт, халаалт",
+    "images": [
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac1.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac2.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac3.png"
+    ],
+    "description": "• Хурдан хөргөх, халаах<br>• Урьдчилан хөргөх эсвэл халаах горим<br>• Хос температур мэдрэгч<br>• Автомат цэвэрлэгээ"
+  },
+  {
+    "model": "WZ18AWN",
+    "title": "LG Inverter Pro агааржуулагч | 54 м² | Хөргөлт, халаалт",
+    "images": [
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac1.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac2.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac3.png"
+    ],
+    "description": "• Хурдан хөргөх, халаах<br>• Урьдчилан хөргөх эсвэл халаах горим<br>• Хос температур мэдрэгч<br>• Автомат цэвэрлэгээ"
+  },
+  {
+    "model": "WZ24AWN",
+    "title": "Кондиционер LG Inverter Pro | 72 м² | Охлаждение, обогрев",
+    "images": [
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac1.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac2.png",
+      "https://raw.githubusercontent.com/alen-omarbayev/LG/main/rac_landing/rac3.png"
+    ],
+    "description": "• Хурдан хөргөх, халаах<br>• Урьдчилан хөргөх эсвэл халаах горим<br>• Хос температур мэдрэгч<br>• Автомат цэвэрлэгээ"
+  }
+]
