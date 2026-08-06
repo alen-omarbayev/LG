@@ -2,6 +2,13 @@
   "articles": [
     {
       "category": "",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-august/2/PREVIEW.png",
+      "title": "LG получила сертификацию NVIDIA для блока распределения охлаждающей жидкости мощностью 600 кВт",
+      "date": "27.07.2026",
+      "link": "https://lge.tj/lg-magazine/lg-poluchila-sertifikaciyu-nvidia-dlya-cdu-600-kvt-ai-data-centers/"
+    },
+    {
+      "category": "",
       "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-july/12/PREVIEW.png",
       "title": "Как выбрать телевизор для семьи: чек-лист перед покупкой",
       "date": "23.07.2026",
