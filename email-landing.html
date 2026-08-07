@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LG — Скидка -5% за 5 минут вашего времени</title>
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --lg-red: #ea1917;
+        --lg-red-dark: #7e0028;
+        --surface-inverse: #17151a;
+        --text-inverse: #c9c4ce;
+        --text-inverse-strong: #ffffff;
+
+        --ink: #17151a;
+        --ink-soft: #55505c;
+        --paper: #faf8f7;
+        --paper-alt: #f1ecec;
+        --line: #e4dedc;
+        --red-tint: #fcedf1;
+        --surface: #ffffff;
+        --hero-top: #ffffff;
+        --frame-border: #efc7d2;
+        --dashed: #e7b9c6;
+        --accent-text: #7e0028;
+        --coin-border: #a50034;
+        --shadow-red: rgba(165, 0, 52, 0.55);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: #f3f0ef;
+          --ink-soft: #b7b1bc;
+          --paper: #131015;
+          --paper-alt: #211a20;
+          --line: #35292f;
+          --red-tint: #2c1620;
+          --surface: #1c161b;
+          --hero-top: #1a1319;
+          --frame-border: #4a2531;
+          --dashed: #4a2531;
+          --accent-text: #ea1917;
+          --coin-border: #ea1917;
+          --shadow-red: rgba(255, 61, 120, 0.35);
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3,
+      .display {
+        font-family: "Manrope", "Inter", sans-serif;
+        letter-spacing: -0.01em;
+      }
+      a {
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+      }
+
+      .wrap {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .topbar {
+        background: var(--surface-inverse);
+        padding: 18px 0;
+      }
+      .topbar .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-family: "Manrope", sans-serif;
+        font-weight: 800;
+        font-size: 22px;
+        color: var(--text-inverse-strong);
+        letter-spacing: 0.02em;
+      }
+      .logo span {
+        color: #ff4d7d;
+      }
+      .topbar small {
+        color: var(--text-inverse);
+        font-size: 12px;
+      }
+
+      .hero {
+        background: linear-gradient(
+          180deg,
+          var(--hero-top) 0%,
+          var(--paper) 100%
+        );
+        padding: 52px 0 40px;
+        text-align: center;
+        border-bottom: 1px solid var(--line);
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--red-tint);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 7px 16px;
+        border-radius: 100px;
+        margin-bottom: 22px;
+      }
+      .hero h1 {
+        font-size: 34px;
+        font-weight: 800;
+        line-height: 1.18;
+        margin: 0 0 14px;
+        color: var(--ink);
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--accent-text);
+      }
+      .hero p.sub {
+        font-size: 16px;
+        color: var(--ink-soft);
+        max-width: 440px;
+        margin: 0 auto 30px;
+      }
+      .cta {
+        display: inline-block;
+        background: var(--lg-red);
+        border: 1px solid var(--lg-red);
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 16px 34px;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: 0 10px 24px -8px var(--shadow-red);
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease,
+          color 0.15s ease,
+          border-color 0.15s ease,
+          background 0.15s ease;
+      }
+      .cta:hover {
+        border-color: #000;
+        color: #000;
+        background: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 14px 28px -8px var(--shadow-red);
+      }
+
+      .stack {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin: 38px 0 6px;
+      }
+      .coin {
+        width: 84px;
+        height: 84px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: "Manrope", sans-serif;
+        border: 2px solid #ea1917;
+        background: var(--surface);
+        color: #ea1917;
+      }
+      .coin b {
+        font-size: 22px;
+        line-height: 1;
+        font-weight: 800;
+      }
+      .coin span {
+        font-size: 9px;
+        letter-spacing: 0.04em;
+        color: var(--ink-soft);
+        margin-top: 2px;
+      }
+      .op {
+        font-size: 20px;
+        color: var(--ink-soft);
+        font-weight: 600;
+        width: 26px;
+        text-align: center;
+      }
+      .coin.total {
+        width: 100px;
+        height: 100px;
+        background: var(--lg-red);
+        border-color: var(--lg-red);
+        color: #fff;
+      }
+      .coin.total span {
+        color: #f6c7d3;
+      }
+      .stack-caption {
+        text-align: center;
+        font-size: 13px;
+        color: var(--ink-soft);
+        margin-bottom: 6px;
+      }
+
+      .section {
+        padding: 40px 0;
+      }
+      .section p {
+        font-size: 15.5px;
+        color: var(--ink);
+        margin: 0 0 16px;
+      }
+      .section p.lead {
+        font-weight: 600;
+      }
+      .divider {
+        height: 1px;
+        background: var(--line);
+        border: 0;
+        margin: 0;
+      }
+
+      .cta-row {
+        text-align: center;
+        padding: 8px 0 30px;
+      }
+
+      .box {
+        border: 1.5px solid var(--line);
+        border-radius: 14px;
+        padding: 26px 24px;
+        margin: 0 0 24px;
+        background: var(--surface);
+      }
+      .box.red-frame {
+        border-color: var(--frame-border);
+        background: var(--red-tint);
+      }
+      .box h3 {
+        font-size: 16px;
+        font-weight: 800;
+        margin: 0 0 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .cond-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .cond-list li {
+        display: flex;
+        gap: 12px;
+        padding: 12px 0;
+        border-top: 1px dashed var(--dashed);
+        font-size: 14.5px;
+        color: var(--ink);
+      }
+      .cond-list li:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .perks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .perk {
+        background: var(--paper-alt);
+        border-radius: 12px;
+        padding: 18px 16px;
+        text-align: center;
+      }
+      .perk .ic {
+        font-size: 24px;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .perk .tx {
+        font-size: 13.5px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 27px;
+        }
+        .perks {
+          grid-template-columns: 1fr 1fr;
+        }
+        .coin {
+          width: 70px;
+          height: 70px;
+        }
+        .coin.total {
+          width: 84px;
+          height: 84px;
+        }
+      }
+
+      footer {
+        background: var(--surface-inverse);
+        color: var(--text-inverse);
+        padding: 34px 0;
+        text-align: center;
+        font-size: 13px;
+      }
+      footer .phone {
+        color: var(--text-inverse-strong);
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      footer .links a {
+        color: var(--text-inverse);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(201, 196, 206, 0.35);
+      }
+      footer .links {
+        margin-top: 14px;
+      }
+      footer .links span {
+        margin: 0 10px;
+        color: #5b5763;
+      }
+      footer .fine {
+        margin-top: 18px;
+        color: #726d79;
+        font-size: 11.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="wrap">
+        <h1>Скидка <em>−5%</em> за 5 минут<br />вашего времени</h1>
+        <p class="sub">
+          Знаете ли вы, что технику LG можно приобрести напрямую в официальном
+          интернет-магазине LG — с бесплатной доставкой и установкой?
+        </p>
+        <a href="#" class="cta">Пройти опрос и получить скидку 5% </a>
+
+        <div class="stack">
+          <div class="coin"><b>5%</b><span>ЗА ОПРОС</span></div>
+          <div class="op">+</div>
+          <div class="coin"><b>5%</b><span>НА 1-Й ЗАКАЗ</span></div>
+          <div class="op">=</div>
+          <div class="coin total"><b>10%</b><span>ВСЕГО</span></div>
+        </div>
+        <p class="stack-caption">Скидки суммируются — экономия до 10%</p>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="section">
+      <div class="wrap">
+        <p>
+          Мы хотим сделать выбор техники на сайте LG ещё более простым и
+          удобным. Для этого нам важно узнать ваше мнение.
+        </p>
+        <p>
+          Расскажите, как вы выбираете бытовую технику, что для вас особенно
+          важно при покупке и с какими сложностями вы сталкиваетесь. Опрос
+          займёт около 5 минут.
+        </p>
+        <p class="lead">
+          В благодарность за ваше время мы отправим вам промокод на скидку 10% в
+          официальном интернет-магазине LG.
+        </p>
+
+        <div class="cta-row">
+          <a href="#" class="cta">Пройти опрос и получить скидку 5%</a>
+        </div>
+
+        <div class="box red-frame">
+          <h3>📌 Как работают скидки и промокод</h3>
+          <ul class="cond-list">
+            <li>
+              <span
+                >Скидки суммируются! Вы получаете <b>5% по промокоду</b> за
+                опрос + <b>5% автоматической скидки</b> на первый заказ —
+                суммарная экономия до <b>10%</b>.</span
+              >
+            </li>
+            <li>
+              <span
+                ><b>Куда придёт промокод:</b> мы отправим его на ваш e-mail
+                сразу после прохождения опроса.</span
+              >
+            </li>
+            <li>
+              <span><b>Срок действия:</b> 60 дней с момента получения.</span>
+            </li>
+            <li>
+              <span
+                ><b>Ассортимент:</b> промокод действует на весь каталог
+                официального интернет-магазина LG.</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Преимущества покупки на сайте LG</h3>
+          <div class="perks">
+            <div class="perk">
+              <span class="ic">🚚</span
+              ><span class="tx">Бесплатная доставка</span>
+            </div>
+            <div class="perk">
+              <span class="ic">🛠️</span
+              ><span class="tx">Бесплатная установка</span>
+            </div>
+            <div class="perk">
+              <span class="ic">🎁</span
+              ><span class="tx">Скидка −5% на первый заказ</span>
+            </div>
+            <div class="perk">
+              <span class="ic">🛡️</span
+              ><span class="tx"
+                >Оригинальная продукция и официальная гарантия LG</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <div class="phone">📞 2255 — Контакт-центр интернет-магазина LG</div>
+        <div class="links">
+          <a href="https://wa.me/77019911658">Связаться с нами</a><span>|</span
+          ><a
+            href="https://qa-kz.m.lgaccount.com/customer/terms_detail?country=KZ&language=ru-RU&terms_svcCode=SVC709&terms_type=A_ITG_PRV&terms_publish=N&division=noticeterms&terms_id=20260325002_KZ"
+            >Политика конфиденциальности</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
