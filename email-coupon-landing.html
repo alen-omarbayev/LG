@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LG — Ваш промокод на скидку 5% внутри</title>
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --lg-red: #ea1917;
+        --lg-red-dark: #7e0028;
+        --surface-inverse: #17151a;
+        --text-inverse: #c9c4ce;
+        --text-inverse-strong: #ffffff;
+
+        --ink: #17151a;
+        --ink-soft: #55505c;
+        --paper: #faf8f7;
+        --paper-alt: #f1ecec;
+        --line: #e4dedc;
+        --red-tint: #fcedf1;
+        --surface: #ffffff;
+        --hero-top: #ffffff;
+        --frame-border: #efc7d2;
+        --dashed: #e7b9c6;
+        --accent-text: #7e0028;
+        --coin-border: #a50034;
+        --shadow-red: rgba(165, 0, 52, 0.55);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: #f3f0ef;
+          --ink-soft: #b7b1bc;
+          --paper: #131015;
+          --paper-alt: #211a20;
+          --line: #35292f;
+          --red-tint: #2c1620;
+          --surface: #1c161b;
+          --hero-top: #1a1319;
+          --frame-border: #4a2531;
+          --dashed: #4a2531;
+          --accent-text: #ea1917;
+          --coin-border: #ea1917;
+          --shadow-red: rgba(255, 61, 120, 0.35);
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.6;
+      }
+      h1,
+      h2,
+      h3,
+      .display {
+        font-family: "Manrope", "Inter", sans-serif;
+        letter-spacing: -0.01em;
+      }
+      a {
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+      }
+
+      .wrap {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero {
+        background: linear-gradient(
+          180deg,
+          var(--hero-top) 0%,
+          var(--paper) 100%
+        );
+        padding: 52px 0 40px;
+        text-align: center;
+        border-bottom: 1px solid var(--line);
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--red-tint);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 7px 16px;
+        border-radius: 100px;
+        margin-bottom: 22px;
+        background: var(--lg-red);
+      }
+      .hero h1 {
+        font-size: 34px;
+        font-weight: 800;
+        line-height: 1.18;
+        margin: 0 0 14px;
+        color: var(--ink);
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--lg-red);
+      }
+      .hero p.sub {
+        font-size: 16px;
+        color: var(--ink-soft);
+        max-width: 460px;
+        margin: 0 auto 6px;
+      }
+
+      .cta {
+        display: inline-block;
+        background: var(--lg-red);
+        border: 1px solid var(--lg-red);
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 16px 34px;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: 0 10px 24px -8px var(--shadow-red);
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease,
+          color 0.15s ease,
+          border-color 0.15s ease,
+          background 0.15s ease;
+      }
+      .cta:hover {
+        border-color: #000;
+        color: #000;
+        background: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 14px 28px -8px var(--shadow-red);
+      }
+
+      .coupon {
+        position: relative;
+        max-width: 420px;
+        margin: 34px auto 30px;
+        background: var(--surface);
+        border: 2px dashed var(--lg-red);
+        border-radius: 16px;
+        padding: 26px 24px 22px;
+        text-align: center;
+      }
+      .coupon::before,
+      .coupon::after {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--paper);
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .coupon::before {
+        left: -13px;
+      }
+      .coupon::after {
+        right: -13px;
+      }
+      .coupon-label {
+        font-size: 12.5px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 10px;
+      }
+      .coupon-code {
+        font-family: "Manrope", monospace;
+        font-weight: 800;
+        font-size: 28px;
+        letter-spacing: 0.05em;
+        color: var(--lg-red);
+        word-break: break-all;
+        margin-bottom: 14px;
+      }
+      .copy-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: none;
+        border: 1.5px solid var(--line);
+        color: var(--ink);
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 9px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition:
+          border-color 0.15s ease,
+          background 0.15s ease;
+      }
+      .copy-btn:hover {
+        border-color: var(--coin-border);
+        background: var(--red-tint);
+      }
+      .coupon-note {
+        margin: 16px 0 0;
+        font-size: 12.5px;
+        color: var(--ink-soft);
+      }
+
+      .section {
+        padding: 8px 0 40px;
+      }
+      .section p {
+        font-size: 15.5px;
+        color: var(--ink);
+        margin: 0 0 16px;
+      }
+      .section p.lead {
+        font-weight: 600;
+      }
+      .divider {
+        height: 1px;
+        background: var(--line);
+        border: 0;
+        margin: 0;
+      }
+
+      .cta-row {
+        text-align: center;
+        padding: 6px 0 30px;
+      }
+
+      .box {
+        border: 1.5px solid var(--line);
+        border-radius: 14px;
+        padding: 26px 24px;
+        margin: 0 0 24px;
+        background: var(--surface);
+      }
+      .box.red-frame {
+        border-color: var(--frame-border);
+        background: var(--red-tint);
+      }
+      .box.gray-frame {
+        border-color: var(--line);
+        background: var(--paper-alt);
+      }
+      .box h3 {
+        font-size: 16px;
+        font-weight: 800;
+        margin: 0 0 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .cond-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .cond-list li {
+        display: flex;
+        gap: 12px;
+        padding: 12px 0;
+        border-top: 1px dashed var(--dashed);
+        font-size: 14.5px;
+        color: var(--ink);
+      }
+      .cond-list li:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+      .box.gray-frame .cond-list li {
+        border-top: 1px dashed var(--line);
+      }
+      .cond-list b {
+        color: var(--accent-text);
+      }
+      .box.gray-frame .cond-list b {
+        color: var(--ink);
+      }
+
+      .perks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .perk {
+        background: var(--paper-alt);
+        border-radius: 12px;
+        padding: 18px 16px;
+        text-align: center;
+      }
+      .perk .ic {
+        font-size: 24px;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .perk .tx {
+        font-size: 13.5px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 27px;
+        }
+        .perks {
+          grid-template-columns: 1fr 1fr;
+        }
+        .coupon-code {
+          font-size: 22px;
+        }
+      }
+
+      footer {
+        background: var(--surface-inverse);
+        color: var(--text-inverse);
+        padding: 34px 0;
+        text-align: center;
+        font-size: 13px;
+      }
+      footer .phone {
+        color: var(--text-inverse-strong);
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      footer .links a {
+        color: var(--text-inverse);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(201, 196, 206, 0.35);
+      }
+      footer .links {
+        margin-top: 14px;
+      }
+      footer .links span {
+        margin: 0 10px;
+        color: #5b5763;
+      }
+      footer .fine {
+        margin-top: 18px;
+        color: #726d79;
+        font-size: 11.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="wrap">
+        <div class="badge">🎁 Ваш промокод уже ждёт вас</div>
+        <h1>Спасибо за <em>участие</em><br />в исследовании LG</h1>
+        <p class="sub">
+          Благодарим вас за участие в нашем исследовании и за то, что нашли
+          время поделиться своим мнением. Ваши ответы помогут нам лучше понять
+          потребности покупателей и сделать процесс выбора техники LG ещё более
+          удобным, понятным и персонализированным.
+        </p>
+
+        <div class="coupon">
+          <div class="coupon-label">Ваш промокод</div>
+          <div class="coupon-code" id="promoCode">[ВАШ_ПРОМОКОД]</div>
+          <button class="copy-btn" onclick="copyCode()" id="copyBtn">
+            Скопировать
+          </button>
+          <p class="coupon-note">
+            Используйте его при оформлении заказа в официальном
+            интернет-магазине LG и получите дополнительную скидку 5%.
+          </p>
+        </div>
+
+        <div class="cta-row">
+          <a href="https://www.lg.com/kz/" class="cta"
+            >Перейти в интернет-магазин LG</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="section">
+      <div class="wrap">
+        <div class="box red-frame">
+          <h3>📌 Важно знать</h3>
+          <ul class="cond-list">
+            <li>
+              <span
+                >Ваш промокод предоставляет <b>дополнительную скидку 5%</b> на
+                товары официального интернет-магазина LG.</span
+              >
+            </li>
+            <li>
+              <span
+                >Для новых покупателей также действует
+                <b>автоматическая скидка 5%</b> на первый заказ.</span
+              >
+            </li>
+            <li>
+              <span
+                >Скидки суммируются, поэтому общая выгода может составить до
+                <b>10%</b>.</span
+              >
+            </li>
+            <li>
+              <span
+                ><b>Срок действия промокода</b> — 60 дней с момента получения
+                письма.</span
+              >
+            </li>
+            <li>
+              <span
+                >Промокод распространяется на ассортимент официального
+                интернет-магазина LG в соответствии с действующими условиями
+                акции.</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="box gray-frame">
+          <h3>🔒 Конфиденциальность ваших данных</h3>
+          <p
+            style="margin: 0 0 14px; font-size: 14.5px; color: var(--ink-soft)"
+          >
+            Мы ценим ваше доверие и гарантируем конфиденциальность
+            предоставленной информации.
+          </p>
+          <ul class="cond-list">
+            <li>
+              <span
+                >Ответы будут использоваться исключительно в
+                <b>исследовательских целях</b> для улучшения клиентского опыта и
+                сервисов LG.</span
+              >
+            </li>
+            <li>
+              <span
+                >Результаты анализа будут рассматриваться только в
+                <b>обобщённом виде</b> и не будут связаны с конкретными
+                участниками исследования.</span
+              >
+            </li>
+            <li>
+              <span
+                ><b>Персональные данные не передаются третьим лицам</b> и
+                обрабатываются в соответствии с действующей политикой
+                конфиденциальности LG.</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>Преимущества покупки на сайте LG</h3>
+          <div class="perks">
+            <div class="perk">
+              <span class="ic">🚚</span
+              ><span class="tx">Бесплатная доставка</span>
+            </div>
+            <div class="perk">
+              <span class="ic">🛠️</span
+              ><span class="tx">Бесплатная установка</span>
+            </div>
+            <div class="perk">
+              <span class="ic">🎁</span
+              ><span class="tx">Скидка −5% на первый заказ</span>
+            </div>
+            <div class="perk">
+              <span class="ic">🛡️</span
+              ><span class="tx"
+                >Оригинальная продукция и официальная гарантия LG</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <div class="phone">📞 2255 — Контакт-центр интернет-магазина LG</div>
+        <div class="links">
+          <a href="https://wa.me/77019911658">Связаться с нами</a><span>|</span
+          ><a
+            href="https://qa-kz.m.lgaccount.com/customer/terms_detail?country=KZ&language=ru-RU&terms_svcCode=SVC709&terms_type=A_ITG_PRV&terms_publish=N&division=noticeterms&terms_id=20260325002_KZ"
+            >Политика конфиденциальности</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function copyCode() {
+        const code = document.getElementById("promoCode").textContent;
+        const btn = document.getElementById("copyBtn");
+        navigator.clipboard.writeText(code).then(() => {
+          const original = btn.textContent;
+          btn.textContent = "✓ Скопировано";
+          setTimeout(() => {
+            btn.textContent = original;
+          }, 1800);
+        });
+      }
+    </script>
+  </body>
+</html>
