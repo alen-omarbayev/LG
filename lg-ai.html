@@ -1,0 +1,1147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LG AI — Affectionate Intelligence for YOU</title>
+    <style>
+      :root {
+        --cream: #f3efe7;
+        --cream-2: #ede8dd;
+        --ink: #141414;
+        --ink-soft: #4a4a48;
+        --line: #dcd6c8;
+        --grad-a: #ff3b57;
+        --grad-b: #b03df0;
+        --grad-c: #7a2de0;
+        --pill-bg: linear-gradient(135deg, #ff2d95, #9b2df0);
+        --radius: 18px;
+        --maxw: 1400px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      img,
+      video {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+      @media (max-width: 768px) {
+        .wrap {
+          padding: 0 20px;
+        }
+      }
+
+      /* ---------- DESKTOP / MOBILE TOGGLE ----------
+         !important здесь намеренно: некоторые контекстные правила
+         ниже (например ".full-media img{display:block}") имеют
+         более высокую специфичность, чем просто ".mobile-only",
+         и без !important могли перебивать скрытие/показ. */
+      .desktop-only {
+        display: block !important;
+      }
+      .mobile-only {
+        display: none !important;
+      }
+      @media (max-width: 768px) {
+        .desktop-only {
+          display: none !important;
+        }
+        .mobile-only {
+          display: block !important;
+        }
+      }
+
+      /* ---------- FULL WIDTH MEDIA BLOCKS ---------- */
+      .full-media {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        line-height: 0;
+      }
+      .full-media video,
+      .full-media img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      /* hero video banner */
+      .hero-banner {
+        position: relative;
+      }
+      .hero-banner video {
+        width: 100%;
+        height: auto;
+      }
+
+      /* ---------- INTRO / MANIFESTO ---------- */
+      .intro {
+        padding: 100px 0 60px;
+        text-align: center;
+      }
+      .logo-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 28px;
+      }
+      .logo-row .lg {
+        font-size: 34px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+      .ai-badge {
+        background: var(--pill-bg);
+        color: #fff;
+        font-weight: 800;
+        font-size: 20px;
+        padding: 5px 10px;
+        border-radius: 8px;
+        line-height: 1;
+      }
+      .intro h1 {
+        font-size: clamp(28px, 4.2vw, 52px);
+        font-weight: 800;
+        letter-spacing: -1px;
+        margin: 0 0 46px;
+      }
+      .intro h1 .grad {
+        background: linear-gradient(
+          90deg,
+          var(--grad-a),
+          var(--grad-b),
+          var(--grad-c)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .intro .lede {
+        max-width: 820px;
+        margin: 0 auto 20px;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.65;
+        color: var(--ink);
+      }
+      .intro .subline {
+        margin-top: 36px;
+        font-size: 17px;
+        color: var(--ink-soft);
+      }
+      .arrow-media {
+        width: 100%;
+        max-width: 60px;
+        margin: 34px auto 0;
+        opacity: 0.8;
+      }
+
+      /* ---------- TABS (shared component) ---------- */
+      .tabbar {
+        display: flex;
+        justify-content: left;
+        gap: 36px;
+        padding: 60px 0 30px;
+        flex-wrap: wrap;
+      }
+      .tabbar button {
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: 500;
+        background: transparent;
+        border: none;
+        color: #000;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .tabbar button.active {
+        background: transparent;
+        border-bottom: 2px solid #ea1917;
+      }
+      .tabbar button:hover:not(.active) {
+        border-color: var(--ink);
+        color: var(--ink);
+      }
+
+      .tab-panel {
+        display: none;
+      }
+      .tab-panel.active {
+        display: block;
+        animation: fade 0.35s ease;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section-heading {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 34px;
+        padding: 0 20px;
+        font-size: clamp(18px, 2vw, 22px);
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      /* video/image banner with centered caption (Delightful/Effortless/Well-cared) */
+      .caption-banner {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin: 0 0 40px;
+      }
+      .caption-banner .caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: clamp(22px, 3vw, 34px);
+        font-weight: 800;
+        text-align: center;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+        width: 90%;
+      }
+
+      /* simple product card grid: square image + Learn more */
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 22px;
+        padding: 0 0 80px;
+      }
+      .card-simple {
+        text-align: left;
+      }
+      .card-simple .thumb {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #e4ded0;
+      }
+      .card-simple .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .card-simple .learn {
+        display: inline-block;
+        margin-top: 12px;
+        font-weight: 700;
+        font-size: 14px;
+        border-bottom: 1.5px solid var(--ink);
+        padding-bottom: 2px;
+      }
+
+      /* ---------- CATEGORY MEGA-SECTION (TV / Audio / Appliances / AC / Computing) ---------- */
+      .cat-nav {
+        display: flex;
+        justify-content: left;
+        gap: 36px;
+        padding: 70px 0 0;
+        border-top: 1px solid var(--line);
+        flex-wrap: wrap;
+      }
+      .cat-nav button {
+        font-family: inherit;
+        background: none;
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+        color: #000;
+
+        cursor: pointer;
+      }
+      .cat-nav button.active {
+        color: var(--ink);
+        border-bottom: 2px solid #ea1917;
+      }
+
+      .cat-panel {
+        display: none;
+        padding-top: 40px;
+      }
+      .cat-panel.active {
+        display: block;
+        animation: fade 0.35s ease;
+      }
+
+      .cat-panel .lg-ai-strip {
+        width: 100%;
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+      .cat-panel .lg-ai-strip img {
+        width: 100%;
+      }
+
+      .cat-title {
+        font-size: clamp(24px, 3vw, 34px);
+        font-weight: 800;
+        margin: 0 0 10px;
+      }
+      .cat-desc {
+        max-width: 760px;
+        color: var(--ink-soft);
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 0 0 36px;
+      }
+
+      .cat-banner {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin-bottom: 44px;
+      }
+      .cat-banner img {
+        width: 100%;
+      }
+      .cat-banner .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 36px;
+        max-width: 420px;
+        color: #fff;
+      }
+      .cat-banner .overlay h3 {
+        font-size: clamp(18px, 2.2vw, 24px);
+        margin: 0 0 16px;
+        font-weight: 800;
+        line-height: 1.3;
+      }
+      .cat-banner .overlay a.btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--ink);
+        font-weight: 700;
+        font-size: 14px;
+        padding: 11px 22px;
+        border-radius: 999px;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(242px, 1fr));
+        gap: 28px;
+        margin-bottom: 34px;
+      }
+      .feature-card .thumb {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #e4ded0;
+        margin-bottom: 14px;
+      }
+      .feature-card .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .feature-card h4 {
+        font-size: 15px;
+        font-weight: 800;
+        margin: 0 0 6px;
+      }
+      .feature-card p {
+        font-size: 13.5px;
+        line-height: 1.55;
+        color: var(--ink-soft);
+        margin: 0;
+      }
+
+      .disclaimer {
+        border-top: 1px solid var(--line);
+        padding: 24px 0 70px;
+        font-size: 11.5px;
+        line-height: 1.7;
+        color: #8a8577;
+      }
+      .disclaimer p {
+        margin: 0 0 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ======================================================
+  ЗАМЕНА МЕДИА: все ссылки на фото/видео собраны в объектах
+  MEDIA / LIFE_TABS / CATEGORIES внизу страницы (тег <script>).
+  У КАЖДОГО фото и видео теперь 2 поля — desktop и mobile.
+  Просто впишите свои ссылки в кавычки — верстка и переключение
+  табов менять не нужно.
+======================================================= -->
+
+    <!-- 1. HERO VIDEO BANNER (full width, desktop/mobile) -->
+    <div class="full-media hero-banner">
+      <video
+        class="desktop-only"
+        id="heroVideoDesktop"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+      <video
+        class="mobile-only"
+        id="heroVideoMobile"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+    </div>
+
+    <!-- 2. LG AI IMAGE FULL WIDTH (desktop/mobile) -->
+    <div class="full-media" id="lgAiHeroWrap"></div>
+
+    <!-- 3. MANIFESTO -->
+    <section class="intro wrap">
+      <h1><span class="grad">Affectionate Intelligence</span> for YOU</h1>
+
+      <p class="lede">
+        At LG, we've been asking ourselves: what should AI exist for?<br />After
+        much reflection, we've found our answer.
+      </p>
+
+      <p class="lede">
+        For us, AI goes beyond Artificial Intelligence. It is Affectionate
+        Intelligence, built on LG's human-centered AI philosophy to learn who
+        you are, adapt to your lifestyle, and care for you in everyday life.
+      </p>
+
+      <p class="lede">
+        As AI becomes a part of our daily lives,<br />it should help create the
+        better life we all deserve.
+      </p>
+
+      <p class="lede">
+        That's why LG AI starts with YOU affectionately. Through sensing,
+        understanding, and caring for every moment of your life.
+      </p>
+
+      <div class="subline">Discover how Life's Good with LG AI</div>
+
+      <div id="arrowDownWrap"></div>
+    </section>
+
+    <!-- 4. TABS: Delightful life / Effortless life / Well-cared life -->
+    <section id="lifeTabsSection" class="wrap">
+      <div class="tabbar" id="lifeTabbar"></div>
+      <div id="lifeTabPanels"></div>
+    </section>
+
+    <!-- 5. CATEGORY MEGA NAV: TV / Audio / Appliances / Air Conditioning / Computing -->
+    <section id="catSection" class="wrap">
+      <div class="cat-nav" id="catNav"></div>
+      <div id="catPanels"></div>
+    </section>
+
+    <script>
+      /* =========================================================
+               MEDIA / CONTENT CONFIG
+               Каждое изображение и видео — объект { desktop: "...", mobile: "..." }.
+               Впишите свои ссылки вместо пустых строк "".
+            ========================================================= */
+      const MEDIA = {
+        heroVideo: {
+          desktop:
+            "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/video/ai-gate-video-kv-video-desktop.mp4",
+          mobile:
+            "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/video/ai-gate-video-kv-video-mobile.mp4",
+        },
+        lgAiImage: {
+          desktop:
+            "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-overview-ai-logo-desktop.svg",
+          mobile: "", // мобильная версия картинки LG AI (верхний блок)
+        },
+        arrowDown: {
+          desktop:
+            "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-overview-scroll-down-icon-desktop.svg",
+          mobile: "",
+        },
+      };
+
+      // -------- LIFE TABS (Delightful / Effortless / Well-cared) --------
+      const LIFE_TABS = [
+        {
+          id: "delightful",
+          label: "Delightful life",
+          heading:
+            "LG AI learns your routines and preferences, turning everyday viewing and listening into delightfully personalized moments.",
+          bannerCaption: "For your delightful life",
+          bannerVideo: {
+            desktop:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/video/ai-gate-video-benefit01-banner-desktop.mp4",
+            mobile:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/video/ai-gate-video-benefit01-banner-mobile.mp4",
+          },
+          cards: [
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products01-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products01-d.jpg",
+              },
+              label: "LG OLED evo AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products02-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products02-d.jpg",
+              },
+              label: "LG Micro RGB evo AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products03-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products03-d.jpg",
+              },
+              label: "LG QNED evo AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products04-pc.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products04-pc.jpg",
+              },
+              label: "LG NANO 4K UHD AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products05-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products05-d.jpg",
+              },
+              label: "LG xboom AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products06-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit01-products06-d.jpg",
+              },
+              label: "LG UltraGear evo AI",
+            },
+          ],
+        },
+        {
+          id: "effortless",
+          label: "Effortless life",
+          heading:
+            "LG AI takes care of the everyday chores, so your home runs itself while you focus on what matters.",
+          bannerCaption: "For your effortless life",
+          bannerVideo: {
+            desktop:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/video/ai-gate-video-benefit02-banner-desktop.mp4",
+            mobile:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/video/ai-gate-video-benefit02-banner-mobile.mp4",
+          },
+          cards: [
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit02-products01-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit02-products01-d.jpg",
+              },
+              label: "LG WashTower AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit02-products02-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit02-products02-d.jpg",
+              },
+              label: "LG Instaview AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit02-products03-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit02-products03-d.jpg",
+              },
+              label: "LG Washing Machine AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit02-products04-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit02-products04-d.jpg",
+              },
+              label: "LG Dryer AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit02-products05-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit02-products05-d.jpg",
+              },
+              label: "LG CordZero AI",
+            },
+          ],
+        },
+        {
+          id: "wellcared",
+          label: "Well-cared life",
+          heading:
+            "LG AI senses what your home and family need, quietly caring for every moment of your day.",
+          bannerCaption: "For your well-cared life",
+          bannerVideo: {
+            desktop:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/video/ai-gate-video-benefit03-banner-desktop.mp4",
+            mobile:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/video/ai-gate-video-benefit03-banner-mobile.mp4",
+          },
+          cards: [
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products01-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products01-d.jpg",
+              },
+              label: "LG Air Conditioner AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products02-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products02-d.jpg",
+              },
+              label: "LG ArtCool AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products03-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products03-d.jpg",
+              },
+              label: "LG PuriCare AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products04-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products04-d.jpg",
+              },
+              label: "ADAS Vision System AI",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products05-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products05-d.jpg",
+              },
+              label: "Digital Cockpit",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products06-d.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-benefit03-products06-d.jpg",
+              },
+              label: "LG Ware",
+            },
+          ],
+        },
+      ];
+
+      // -------- CATEGORY SECTIONS (TV / Audio / Appliances / Air Conditioning / Computing) --------
+      // У каждой категории СВОЯ картинка LG AI (lgAiImage), desktop/mobile.
+      const CATEGORIES = [
+        {
+          id: "tv",
+          label: "TV",
+          lgAiImage: {
+            desktop:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-eyebrow-logo-desktop.svg",
+            mobile:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-eyebrow-logo-mobile.svg",
+          },
+          title: "See every scene the way it's meant to be seen",
+          desc: "LG AI TVs analyze content and your room in real time, automatically optimizing picture and sound for every scene.",
+          banner: {
+            img: {
+              desktop:
+                "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-tv-banner-desktop.jpg",
+              mobile:
+                "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-banner-mobile.png",
+            },
+            heading: "Discover AI Picture & AI Sound",
+            btnText: "Learn more",
+            btnUrl: "#",
+          },
+          cards: [
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-feature01.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-feature01.png",
+              },
+              title: "AI Voice ID",
+              text: "AI Voice ID recognizes individual users by their voice and instantly loads their personal profile — surfacing recommendations, watchlists, and app preferences tailored to whoever is speaking. Available on LG OLED, QNED, NanoCell, and UHD TVs from 2024 onwards.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-tv-feature02.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-tv-feature02.jpg",
+              },
+              title: "AI Search",
+              text: "LG AI TVs support AI voice assistants and AI Search that's capable of understanding 24 languages. Just ask and get what you need with Google Gemini providing answers right on your TV screen, whether it's finding a movie, helping plan your next trip, and more.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-feature03.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-feature03.png",
+              },
+              title: "AI Concierge",
+              text: "AI Concierge gets to know you through your watch history and viewing patterns, then surfaces personalized keywords and content recommendations with a single short press of the AI button on the LG AI Magic Remote.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-feature04.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-feature04.png",
+              },
+              title: "AI Chatbot",
+              text: "AI Chatbot understands and resolves your TV-related requests in plain conversation. Speak naturally and the chatbot classifies your intent, adjusts settings, troubleshoots issues, and even links to LG customer service when needed. Available in regions supporting native-language NLP.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-feature05.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-feature05.png",
+              },
+              title: "AI Picture/Sound Wizard",
+              text: "AI Picture Wizard analyzes 1.6 billion image possibilities to learn your visual preferences, while AI Sound Wizard tunes audio from 40 million sound parameters. Together, they create a picture and sound profile uniquely tailored to your eyes and ears, saved to your TV profile.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-feature06.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-tv-feature06.png",
+              },
+              title: "AI Magic Remote",
+              text: "The LG AI Magic Remote replaces traditional buttons with an intuitive point-and-click motion sensor and scroll wheel. A single click activates AI features, while a dedicated AI button instantly brings up AI Voice ID, AI Search, AI Concierge, and AI Chatbot.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-tv-feature04.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-tv-feature04.jpg",
+              },
+              title: "AI Pictire Pro",
+              text: "AI Picture Pro analyzes each scene in fine detail, pixel by pixel, to enhance resolution, brightness, contrast, and sharpness. With Dual Upscaling & Dynamic Tone Mapping Ultra and AI HDR Remastering, enjoy picture quality full of life.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-tv-feature05.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-tv-feature05.jpg",
+              },
+              title: "AI Sound Pro",
+              text: "AI Sound Pro analyzes audio in real time to deliver sound tailored to your content. With AI Voice Remastering Pro and Virtual 11.1.2 Surround, feel sound that's deeper and richer than ever.",
+            },
+          ],
+          disclaimer: [
+            "* LG AI TVs refer to webOS-based TVs with alpha 5 AI Processor or higher, supporting AI features such as content recommendations, AI Picture, and AI Sound. A network connection is required for select AI features.<br>** LG AI features use deep learning-based trained algorithms for real-time image upscaling and sound upmixing.<br>*** All LG webOS 24 TVs feature AI Customization, excluding those without light sensors.<br>**** Specifications vary across alpha AI processor models.",
+          ],
+        },
+        {
+          id: "audio",
+          label: "Audio",
+          lgAiImage: {
+            desktop:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-audio-eyebrow-logo-desktop.svg",
+            mobile:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-audio-eyebrow-logo-mobile.svg",
+          },
+          title: "Sound that adapts to your space",
+          desc: "LG xboom AI is a portable Bluetooth speaker series that analyzes your music in real time and automatically adjusts EQ to suit each genre and listening space. Paired with AI Lighting that detects mood and harmonizes visual ambiance with sound, the xboom AI lineup (Grab, Bounce, Stage 301) delivers sound and atmosphere uniquely tailored to every moment.",
+          banner: {
+            img: {
+              desktop:
+                "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-audio-banner-desktop.png",
+              mobile:
+                "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-audio-banner-mobile.png",
+            },
+            heading: "Discover LG xboom AI",
+            btnText: "Learn more",
+            btnUrl: "#",
+          },
+          cards: [
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-audio-feature01.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-audio-feature01.png",
+              },
+              title: "AI Sound",
+              text: "AI Sound automatically analyzes incoming audio and adjusts EQ in real time — emphasizing rhythm, melody, or vocals based on genre. Choose modes like Bass Boost, Voice Enhance, or Standard manually, or let AI select the optimal mode for whatever you're playing.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-audio-feature02.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-audio-feature02.png",
+              },
+              title: "AI Lighting",
+              text: "AI Lighting detects the genre and mood of your music and syncs LED lighting effects in real time. Choose from Ambient, Party, or Voice modes via the LG ThinQ app, or let AI auto-select the lighting that best matches each track.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-audio-feature03.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-audio-feature03.jpg",
+              },
+              title: "AI Sound Pro+",
+              text: "AI Sound Pro+ identifies the genre and sound of your content, then separates the original dialogue, music, and effects to remaster each with precision — adding a virtual surround layer so crisp detail and a sense of space come together in perfect balance.",
+            },
+          ],
+          disclaimer: [
+            "* Select LG xboom AI models are released throughout 2025–2026 in global markets.",
+          ],
+        },
+        {
+          id: "appliances",
+          label: "Appliances",
+          lgAiImage: {
+            desktop:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-appliances-eyebrow-logo-desktop.svg",
+            mobile:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-appliances-eyebrow-logo-mobile.svg",
+          },
+          title: "Lightens your every load",
+          desc: "LG WashTower AI is a stacked washer-dryer combo powered by AI DD™ (AI Direct Drive) technology. Built-in sensors automatically detect fabric type and load weight in real time, then adjust drum motions, water levels, and detergent dosing to optimize each cycle for sensitive fabric care, every load, every time.",
+          banner: {
+            img: {
+              desktop:
+                "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-appliances-banner-desktop.png",
+              mobile:
+                "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-appliances-banner-mobile.png",
+            },
+            heading: "Discover a new way of life with LG AI Core Tech",
+            btnText: "Learn more",
+            btnUrl: "#",
+          },
+          cards: [
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-appliances-feature01.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-appliances-feature01.png",
+              },
+              title: "AI Wash",
+              text: "LG's AI DD™ (AI Direct Drive) technology detects fabric softness and load weight so built-in sensors choose from six unique motion patterns. This protects delicate clothes, reducing wear on every cycle.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-appliances-feature02.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-appliances-feature02.png",
+              },
+              title: "AI Dry",
+              text: "AI Dry detects fabric type and moisture levels through advanced sensors and customizes drying time and temperature accordingly to deliver perfectly dried clothes every time, with a 10-year warranty coverage on the AI Inverter motor.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-appliances-feature03.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-appliances-feature03.jpg",
+              },
+              title: "AI Saving Mode",
+              text: "AI Saving Mode learns your refrigerator usage and door-opening hours over time to manage energy optimally. During low-usage hours, it automatically adjusts cooling, and when 'Max Saver' mode is active, it cuts energy consumption, easing your electricity bill. Set it up in the LG ThinQ app.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-appliances-feature04.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-appliances-feature04.jpg",
+              },
+              title: "AI Fresh",
+              text: "AI Fresh analyzes your refrigerator usage patterns, anticipates when you tend to open the door, and preemptively adjusts cooling in advance, keeping the internal temperature steady even as you open it. So your ingredients stay fresh as the day you bought them, with no worry about spoilage.",
+            },
+          ],
+          disclaimer: [
+            "* This product is being released gradually in select countries throughout 2025–2026.",
+            "** AI sensing on the LG WashTower activates when the load is under 6kg (most LG AI DD washers activate AI sensing under 3kg).",
+            "*** AI Dry is available for loads under 6kg with fabrics of similar moisture absorption levels.",
+            "**** Energy savings tested by Intertek (Nov 2023): AI Wash showed reduced energy consumption versus standard Cotton cycle on a 3kg mixed soft-fabric load (Model F4X7VYP15). Results may vary.",
+          ],
+        },
+        {
+          id: "ac",
+          label: "Air Conditioning",
+          lgAiImage: { desktop: "", mobile: "" },
+          title: "Air that senses what your room needs",
+          desc: "LG AI air conditioning systems monitor temperature, humidity, and occupancy, adjusting airflow automatically to keep every room comfortable.",
+          banner: {
+            img: { desktop: "", mobile: "" },
+            heading: "Discover LG AI Dual Inverter",
+            btnText: "Learn more",
+            btnUrl: "#",
+          },
+          cards: [
+            {
+              img: { desktop: "", mobile: "" },
+              title: "AI Comfort",
+              text: "Senses room conditions and automatically adjusts temperature and airflow for consistent comfort.",
+            },
+            {
+              img: { desktop: "", mobile: "" },
+              title: "AI Energy Saving",
+              text: "Learns usage patterns to optimize energy consumption without sacrificing comfort.",
+            },
+          ],
+          disclaimer: [
+            "* Available on select LG AI air conditioning models. Actual energy savings may vary based on usage and environment.",
+          ],
+        },
+        {
+          id: "computing",
+          label: "Computing",
+          lgAiImage: { desktop: "", mobile: "" },
+          title: "Work and play, tuned by AI",
+          desc: "LG AI monitors and laptops adapt display and performance settings automatically based on your content and environment.",
+          banner: {
+            img: { desktop: "", mobile: "" },
+            heading: "Discover LG gram AI & UltraGear AI",
+            btnText: "Learn more",
+            btnUrl: "#",
+          },
+          cards: [
+            {
+              img: { desktop: "", mobile: "" },
+              title: "AI Display",
+              text: "Automatically optimizes brightness and color based on ambient lighting and content type.",
+            },
+            {
+              img: { desktop: "", mobile: "" },
+              title: "AI Performance",
+              text: "Balances power and performance in real time depending on your workload.",
+            },
+            {
+              img: { desktop: "", mobile: "" },
+              title: "AI Sound Care",
+              text: "Reduces ambient noise and enhances voice clarity during calls automatically.",
+            },
+          ],
+          disclaimer: [
+            "* Available on select LG AI computing devices. A network connection may be required for select AI features.",
+          ],
+        },
+      ];
+
+      /* ---------------- RENDER HELPERS ---------------- */
+      function el(html) {
+        const d = document.createElement("div");
+        d.innerHTML = html.trim();
+        return d.firstChild;
+      }
+
+      // Возвращает HTML двух <img> (desktop-only / mobile-only) для одного responsive-изображения
+      function responsiveImgHtml(media, alt, extraClass) {
+        const cls = extraClass ? " " + extraClass : "";
+        const d = (media && media.desktop) || "";
+        const m = (media && media.mobile) || "";
+        return (
+          `<img class="desktop-only${cls}" src="${d}" alt="${alt}">` +
+          `<img class="mobile-only${cls}" src="${m}" alt="${alt}">`
+        );
+      }
+
+      // Возвращает HTML двух <video> (desktop-only / mobile-only) для одного responsive-видео
+      function responsiveVideoHtml(media, extraClass) {
+        const cls = extraClass ? " " + extraClass : "";
+        const d = (media && media.desktop) || "";
+        const m = (media && media.mobile) || "";
+        return (
+          `<video class="desktop-only${cls}" autoplay muted loop playsinline src="${d}"></video>` +
+          `<video class="mobile-only${cls}" autoplay muted loop playsinline src="${m}"></video>`
+        );
+      }
+
+      /* ---------------- RENDER: hero image + arrow ---------------- */
+      document.getElementById("heroVideoDesktop").src = MEDIA.heroVideo.desktop;
+      document.getElementById("heroVideoMobile").src = MEDIA.heroVideo.mobile;
+      document.getElementById("lgAiHeroWrap").innerHTML = responsiveImgHtml(
+        MEDIA.lgAiImage,
+        "LG AI",
+      );
+      document.getElementById("arrowDownWrap").innerHTML = responsiveImgHtml(
+        MEDIA.arrowDown,
+        "scroll down",
+        "arrow-media",
+      );
+
+      /* ---------------- RENDER: life tabs ---------------- */
+      const tabbar = document.getElementById("lifeTabbar");
+      const panelsWrap = document.getElementById("lifeTabPanels");
+
+      LIFE_TABS.forEach((tab, i) => {
+        tabbar.appendChild(
+          el(
+            `<button data-tab="${tab.id}" class="${i === 0 ? "active" : ""}">${tab.label}</button>`,
+          ),
+        );
+
+        const cardsHtml = tab.cards
+          .map(
+            (c) => `
+                <div class="card-simple">
+                  <div class="thumb">${responsiveImgHtml(c.img, c.label)}</div>
+                  <a class="learn" href="#">Learn more ›</a>
+                </div>`,
+          )
+          .join("");
+
+        const panel = el(`
+                <div class="tab-panel ${i === 0 ? "active" : ""}" id="panel-${tab.id}">
+                  <p class="section-heading">${tab.heading}</p>
+                  <div class="caption-banner">
+                    ${responsiveVideoHtml(tab.bannerVideo, "banner-video")}
+                    <div class="caption">${tab.bannerCaption}</div>
+                  </div>
+                  <div class="card-grid">${cardsHtml}</div>
+                </div>`);
+        panelsWrap.appendChild(panel);
+      });
+
+      tabbar.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-tab]");
+        if (!btn) return;
+        tabbar
+          .querySelectorAll("button")
+          .forEach((b) => b.classList.toggle("active", b === btn));
+        panelsWrap
+          .querySelectorAll(".tab-panel")
+          .forEach((p) =>
+            p.classList.toggle("active", p.id === "panel-" + btn.dataset.tab),
+          );
+      });
+
+      /* ---------------- RENDER: category mega section ---------------- */
+      const catNav = document.getElementById("catNav");
+      const catPanels = document.getElementById("catPanels");
+
+      CATEGORIES.forEach((cat, i) => {
+        catNav.appendChild(
+          el(
+            `<button data-cat="${cat.id}" class="${i === 0 ? "active" : ""}">${cat.label}</button>`,
+          ),
+        );
+
+        const featureCards = cat.cards
+          .map(
+            (c) => `
+                <div class="feature-card">
+                  <div class="thumb">${responsiveImgHtml(c.img, c.title)}</div>
+                  <h4>${c.title}</h4>
+                  <p>${c.text}</p>
+                </div>`,
+          )
+          .join("");
+
+        const disclaimerHtml = cat.disclaimer
+          .map((d) => `<p>${d}</p>`)
+          .join("");
+
+        const panel = el(`
+                <div class="cat-panel ${i === 0 ? "active" : ""}" id="cat-${cat.id}">
+                  <div class="lg-ai-strip">${responsiveImgHtml(cat.lgAiImage, "LG AI " + cat.label)}</div>
+                  <h2 class="cat-title">${cat.title}</h2>
+                  <p class="cat-desc">${cat.desc}</p>
+                  <div class="cat-banner">
+                    ${responsiveImgHtml(cat.banner.img, cat.banner.heading)}
+                    <div class="overlay">
+                      <h3>${cat.banner.heading}</h3>
+                      <a class="btn" href="${cat.banner.btnUrl}">${cat.banner.btnText}</a>
+                    </div>
+                  </div>
+                  <div class="feature-grid">${featureCards}</div>
+                  <div class="disclaimer">${disclaimerHtml}</div>
+                </div>`);
+        catPanels.appendChild(panel);
+      });
+
+      catNav.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-cat]");
+        if (!btn) return;
+        catNav
+          .querySelectorAll("button")
+          .forEach((b) => b.classList.toggle("active", b === btn));
+        catPanels
+          .querySelectorAll(".cat-panel")
+          .forEach((p) =>
+            p.classList.toggle("active", p.id === "cat-" + btn.dataset.cat),
+          );
+      });
+    </script>
+  </body>
+</html>
