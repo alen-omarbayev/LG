@@ -28,7 +28,6 @@
         margin: 0;
         background: var(--cream);
         color: var(--ink);
-        font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
       }
       img,
@@ -48,6 +47,15 @@
       @media (max-width: 768px) {
         .wrap {
           padding: 0 20px;
+        }
+        .tabbar {
+          gap: 12px !important;
+        }
+        .cat-nav {
+          gap: 0 !important;
+        }
+        .cat-nav button {
+          font-size: 16px !important;
         }
       }
 
@@ -166,7 +174,6 @@
         flex-wrap: wrap;
       }
       .tabbar button {
-        font-family: inherit;
         font-size: 18px;
         font-weight: 500;
         background: transparent;
@@ -273,7 +280,6 @@
         flex-wrap: wrap;
       }
       .cat-nav button {
-        font-family: inherit;
         background: none;
         border: none;
         font-size: 18px;
@@ -938,58 +944,103 @@
         {
           id: "ac",
           label: "Air Conditioning",
-          lgAiImage: { desktop: "", mobile: "" },
+          lgAiImage: {
+            desktop:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-air-conditioning-eyebrow-logo-desktop.svg",
+            mobile:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-air-conditioning-eyebrow-logo-mobile.svg",
+          },
           title: "Air that senses what your room needs",
           desc: "LG AI air conditioning systems monitor temperature, humidity, and occupancy, adjusting airflow automatically to keep every room comfortable.",
           banner: {
-            img: { desktop: "", mobile: "" },
+            img: {
+              desktop:
+                "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-air-conditioning-banner-desktop.png",
+              mobile:
+                "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-air-conditioning-banner-mobile.png",
+            },
             heading: "Discover LG AI Dual Inverter",
             btnText: "Learn more",
             btnUrl: "#",
           },
           cards: [
             {
-              img: { desktop: "", mobile: "" },
-              title: "AI Comfort",
-              text: "Senses room conditions and automatically adjusts temperature and airflow for consistent comfort.",
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-air-conditioning-feature01.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-air-conditioning-feature01.png",
+              },
+              title: "AI Air",
+              text: "AI Air uses radar sensors to detect occupant location within a 5-meter range and automatically switches between direct and indirect airflow, keeping you comfortable while saving energy by avoiding unnecessary cooling of empty spaces. Available in both cooling and heating modes.",
             },
             {
-              img: { desktop: "", mobile: "" },
-              title: "AI Energy Saving",
-              text: "Learns usage patterns to optimize energy consumption without sacrificing comfort.",
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-air-conditioning-feature02.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-air-conditioning-feature02.jpg",
+              },
+              title: "AI Dual Inverter",
+              text: "AI Dual Inverter fine-tunes motor speed in real time rather than cycling the compressor on and off for faster cooling, steadier temperatures, and less energy used. Learning your usage patterns and sensing room conditions, it keeps comfort powerful and quiet.",
+            },
+            {
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-air-conditioning-feature03.jpg",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/2026/image/ai-gate-image-product-category-air-conditioning-feature03.jpg",
+              },
+              title: "AI Freeze Cleaning ",
+              text: "AI Freeze Cleaning makes the inside of your air conditioner effortless to clean. AI detects when it's time, then freezes and thaws moisture on the heat exchanger so the runoff flushes out pollutants, reducing harmful bacteria for a fresher home.",
             },
           ],
           disclaimer: [
-            "* Available on select LG AI air conditioning models. Actual energy savings may vary based on usage and environment.",
+            "* The AI Air can be operated via remote control and ThinQ.<br>** The AI Air is available in both cooling and heating modes.<br>*** While using AI Air, the air volume and wind direction are automatically adjusted according to the situation, and AI Air is turned off when the wind direction is changed.<br>**** When AI Air is activated, the radar sensor detects the location of the occupant and automatically activates the direct/indirect wind.<br>***** The sensing distance of the radar sensor is up to 6m, and there may be differences in the sensing distance depending on the installation and usage environment of the product.<br>****** This function works only with models that have radar sensors.",
           ],
         },
         {
           id: "computing",
           label: "Computing",
-          lgAiImage: { desktop: "", mobile: "" },
+          lgAiImage: {
+            desktop:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-computing-eyebrow-logo-desktop.svg",
+            mobile:
+              "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-computing-eyebrow-logo-mobile.svg",
+          },
           title: "Work and play, tuned by AI",
           desc: "LG AI monitors and laptops adapt display and performance settings automatically based on your content and environment.",
           banner: {
-            img: { desktop: "", mobile: "" },
+            img: {
+              desktop:
+                "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-computing-banner-desktop.png",
+              mobile:
+                "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-computing-banner-mobile.png",
+            },
             heading: "Discover LG gram AI & UltraGear AI",
             btnText: "Learn more",
             btnUrl: "#",
           },
           cards: [
             {
-              img: { desktop: "", mobile: "" },
-              title: "AI Display",
-              text: "Automatically optimizes brightness and color based on ambient lighting and content type.",
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-computing-feature01.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-computing-feature01.png",
+              },
+              title: "gram chat On-Device",
+              text: "gram chat On-Device runs locally on LG's EXAONE language model, letting you securely search, summarize, and translate documents on your PC without sending any data to the cloud, even when offline. Requires 16 GB of system memory.",
             },
             {
-              img: { desktop: "", mobile: "" },
-              title: "AI Performance",
-              text: "Balances power and performance in real time depending on your workload.",
-            },
-            {
-              img: { desktop: "", mobile: "" },
-              title: "AI Sound Care",
-              text: "Reduces ambient noise and enhances voice clarity during calls automatically.",
+              img: {
+                desktop:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-computing-feature02.png",
+                mobile:
+                  "https://www.lg.com/content/dam/channel/wcms/global/lg-ai-gate/image/ai-gate-image-product-category-computing-feature02.png",
+              },
+              title: "gram Chat Cloud",
+              text: "gram chat Cloud is powered by GPT-4o, delivering advanced online research, complex problem-solving, and creative ideation, all with one year of free Cloud features ($240 value) for 2025 LG gram AI buyers. Cloud does not collect personal prompts.",
             },
           ],
           disclaimer: [
