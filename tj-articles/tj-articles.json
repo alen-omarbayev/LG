@@ -2,6 +2,20 @@
   "articles": [
     {
       "category": "",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-sept/9/PREVIEW.png",
+      "title": "Как холодильник LG помогает экономить семейный бюджет",
+      "date": "15.09.2026",
+      "link": "https://lge.tj/lg-magazine/kak-holodilnik-lg-pomogaet-ekonomit-semeynyy-byudzhet/"
+    },
+    {
+      "category": "",
+      "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-sept/8/PREVIEW.png",
+      "title": "LG ПРЕДСТАВЛЯЕТ ПРЕМИАЛЬНЫЕ ТЕЛЕВИЗОРЫ MICRO RGB EVO И MINI RGB EVO НА IFA 2026",
+      "date": "05.09.2026",
+      "link": "https://lge.tj/lg-magazine/lg-micro-rgb-evo-premium-rgb-tv-ifa-2026/"
+    },
+    {
+      "category": "",
       "image": "https://www.lg.com/content/dam/channel/wcms/kz/aa-sept/8/PREVIEW.png",
       "title": "LG ПРЕДСТАВЛЯЕТ ПРЕМИАЛЬНЫЕ ТЕЛЕВИЗОРЫ MICRO RGB EVO И MINI RGB EVO НА IFA 2026",
       "date": "05.09.2026",
